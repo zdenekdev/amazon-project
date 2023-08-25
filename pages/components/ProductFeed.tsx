@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Products } from "../../types/index";
 import Product from "./Product";
 
@@ -19,7 +20,11 @@ function ProductFeed({ products }: { products: Products[] }) {
           />
         ))}
 
-      <img className="md:col-span-full" src="https://links.papareact.com/dyz" />
+      <img
+        className="md:col-span-full"
+        src="https://links.papareact.com/dyz"
+        alt="banner for small and medium businesses"
+      />
 
       <div className="md:col-span-2">
         {products
