@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import { Products } from "../../types";
 import primeLogo from "../../assets/prime-logo.png";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../../slices/basketSlice";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -19,6 +21,8 @@ function Product({
   const [ratingValue] = useState(Math.round(rating.rate));
   const [hasPrime, setHasPrime] = useState(false);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setHasPrime(Math.random() < 0.5);
   }, []);
@@ -28,6 +32,21 @@ function Product({
       style: "currency",
       currency: "USD",
     }).format(price);
+  };
+
+  const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      rating,
+      description,
+      category,
+      image,
+      hasPrime,
+    };
+
+    dispatch(addToBasket(product));
   };
 
   return (
@@ -60,7 +79,9 @@ function Product({
         </div>
       )}
 
-      <button className="mt-auto button">Add to Basket</button>
+      <button onClick={addItemToBasket} className="mt-auto button">
+        Add to Basket
+      </button>
     </div>
   );
 }
