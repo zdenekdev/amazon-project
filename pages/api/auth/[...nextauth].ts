@@ -14,6 +14,8 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.FACEBOOK_SECRET as string,
     }),
   ],
+
+  secret: process.env.NEXTAUTH_SECRET,
   // callbacks: {
   //   async jwt({ token }) {
   //     token.userRole = "admin";
