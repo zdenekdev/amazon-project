@@ -20,11 +20,16 @@ function ProductFeed({ products }: { products: Products[] }) {
           />
         ))}
 
-      <img
-        className="md:col-span-full"
-        src="https://links.papareact.com/dyz"
-        alt="banner for small and medium businesses"
-      />
+      <div className="md:col-span-full">
+        <Image
+          src="https://links.papareact.com/dyz"
+          alt="banner for small and medium businesses"
+          height={300}
+          width={1500}
+          layout="intrinsic"
+          objectFit="cover"
+        />
+      </div>
 
       <div className="md:col-span-2">
         {products

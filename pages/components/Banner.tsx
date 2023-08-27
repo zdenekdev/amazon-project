@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -14,13 +15,34 @@ function Banner() {
         interval={5000}
       >
         <div>
-          <img loading="lazy" src="https://links.papareact.com/gi1" alt="" />
+          <Image
+            loading="lazy"
+            src="https://links.papareact.com/gi1"
+            alt="Graham Norton Book Club"
+            layout="fill"
+          />
         </div>
         <div>
-          <img loading="lazy" src="https://links.papareact.com/6ff" alt="" />
+          <Image
+            loading="lazy"
+            src="https://links.papareact.com/6ff"
+            alt="Prime video"
+            layout="intrinsic"
+            objectFit="cover"
+            height={614}
+            width={1536}
+          />
         </div>
         <div>
-          <img loading="lazy" src="https://links.papareact.com/7ma" alt="" />
+          <Image
+            loading="lazy"
+            src="https://links.papareact.com/7ma"
+            alt="Amazon music"
+            layout="intrinsic"
+            objectFit="cover"
+            height={614}
+            width={1536}
+          />
         </div>
       </Carousel>
     </div>
