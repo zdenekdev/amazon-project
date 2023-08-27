@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: "99a2db4ebe2575e01a48dcf1866a5b25",
   // callbacks: {
   //   async jwt({ token }) {
   //     token.userRole = "admin";
