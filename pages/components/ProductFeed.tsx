@@ -33,8 +33,28 @@ function ProductFeed({ products }: { products: Products[] }) {
       </div>
 
       <div className="md:col-span-2">
-        {products
-          .slice(4, 5)
+        {products &&
+          products
+            .slice(4, 5)
+            .map(
+              ({ id, title, price, description, category, image, rating }) => (
+                <Product
+                  key={id}
+                  id={id}
+                  title={title}
+                  price={price}
+                  description={description}
+                  category={category}
+                  image={image}
+                  rating={rating}
+                />
+              )
+            )}
+      </div>
+
+      {products &&
+        products
+          .slice(5, products.length)
           .map(({ id, title, price, description, category, image, rating }) => (
             <Product
               key={id}
@@ -47,22 +67,6 @@ function ProductFeed({ products }: { products: Products[] }) {
               rating={rating}
             />
           ))}
-      </div>
-
-      {products
-        .slice(5, products.length)
-        .map(({ id, title, price, description, category, image, rating }) => (
-          <Product
-            key={id}
-            id={id}
-            title={title}
-            price={price}
-            description={description}
-            category={category}
-            image={image}
-            rating={rating}
-          />
-        ))}
     </div>
   );
 }
