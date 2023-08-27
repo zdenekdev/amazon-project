@@ -16,10 +16,13 @@ function Banner() {
       >
         <div>
           <Image
-            loading="lazy"
             src="https://links.papareact.com/gi1"
             alt="Graham Norton Book Club"
-            layout="fill"
+            layout="intrinsic"
+            objectFit="cover"
+            height={614}
+            width={1536}
+            priority={true}
           />
         </div>
         <div>

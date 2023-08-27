@@ -6,7 +6,6 @@ import {
 } from "@heroicons/react/outline";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import { RootState } from "../../store";
 import { useSelector } from "react-redux";
 import { selectItems } from "../../slices/basketSlice";
 

@@ -18,7 +18,7 @@ function Product({
   image,
   rating,
 }: Products) {
-  const [ratingValue] = useState(Math.round(rating.rate));
+  const [ratingValue] = useState(Math.round(rating?.rate));
   const [hasPrime, setHasPrime] = useState(false);
 
   const dispatch = useDispatch();
