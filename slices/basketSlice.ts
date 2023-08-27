@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { Products } from "../types";
+import { CheckoutProducts, Products } from "../types";
 
 export interface BasketState {
-  items: Products[];
+  items: CheckoutProducts[];
 }
 
 const initialState: BasketState = {
@@ -16,11 +16,26 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     // Actions
-    addToBasket: (state, action: PayloadAction<Products>) => {
+    addToBasket: (state, action: PayloadAction<CheckoutProducts>) => {
       state.items = [...state.items, action.payload];
     },
 
-    removeFromBasket: (state, action: PayloadAction<number>) => {},
+    removeFromBasket: (state, action: PayloadAction<{ id: number }>) => {
+      const index = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      let newBasket = [...state.items];
+
+      if (index >= 0) {
+        newBasket.splice(index, 1);
+      } else {
+        console.warn(
+          `Cant remove product (id: ${action.payload.id}) as it is not in the basket.`
+        );
+      }
+      state.items = newBasket;
+    },
   },
 });
 

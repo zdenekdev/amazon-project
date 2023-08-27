@@ -39,7 +39,7 @@ function Product({
       id,
       title,
       price,
-      rating,
+      ratingValue,
       description,
       category,
       image,

@@ -28,14 +28,15 @@ function Checkout() {
             </h1>
             {items.map((item, i) => (
               <CheckoutProduct
-                key={item.id}
+                key={i}
                 id={item.id}
                 title={item.title}
-                rating={item.rating}
+                ratingValue={item.ratingValue}
                 price={item.price}
                 description={item.description}
                 category={item.category}
                 image={item.image}
+                hasPrime={item.hasPrime}
               />
             ))}
           </div>
