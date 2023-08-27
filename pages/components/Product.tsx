@@ -63,11 +63,12 @@ function Product({
       />
       <h4 className="my-3">{title}</h4>
       <div className="flex">
-        {Array(ratingValue)
-          .fill(null)
-          .map((_, i) => (
-            <StarIcon key={i} className="h-5 text-yellow-500" />
-          ))}
+        {ratingValue &&
+          Array(ratingValue)
+            .fill(null)
+            .map((_, i) => (
+              <StarIcon key={i} className="h-5 text-yellow-500" />
+            ))}
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
       <div className="mb-5">{currency(price)}</div>
