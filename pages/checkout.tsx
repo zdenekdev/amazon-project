@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import { selectItems, selectTotal } from "../slices/basketSlice";
 import CheckoutProduct from "./components/CheckoutProduct";
 import { useSession } from "next-auth/react";
-import { loadStripe } from "@stripe/stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 
-const stripePromise = loadStripe(process.env.stripe_public_key!);
+// const stripePromise = loadStripe(process.env.stripe_public_key!);
 
 function Checkout() {
   const items = useSelector(selectItems);
@@ -83,7 +83,7 @@ function Checkout() {
               </h2>
 
               <button
-                onClick={createCheckoutSession}
+                // onClick={createCheckoutSession}
                 disabled={!data}
                 className={`button mt-2 ${
                   !data &&
