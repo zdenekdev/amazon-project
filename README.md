@@ -2,7 +2,7 @@
 <div align='center'><img style="width:25%" src='https://raw.githubusercontent.com/zdenekdev/amazon-project/main/assets/amazon-hub-title.png'/></div>
 <h2>About the project</h2>
 
-<p><b>The Amazon project</b> is a basic web application that allows users to sign in using their Google account and add or remove items from the shopping cart. I have used Firebase as the cloud-based database.
+<p><b>The Amazon project</b> is a basic web application that allows users to sign in using their Google account and add or remove items from the shopping cart. As a source of product data, I have used Fake Store API.
 </p>
 
 👉 Live Demo: <a href='https://amzn-project.vercel.app/'>Amazon project</a>
@@ -11,7 +11,7 @@
 
 » Next.js <br>
 » TypeScript <br>
-» Redux toolkit <br>
+» Redux Toolkit <br>
 » Tailwind CSS <br>
 » NextAuth.js <br>
 
