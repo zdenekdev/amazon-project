@@ -1,8 +1,8 @@
 <br>
-<div align='center'><img style="width:25%" src='https://raw.githubusercontent.com/zdenekdev/amazon-project/assets/amazon-hub-title.png'/></div>
+<div align='center'><img style="width:25%" src='https://raw.githubusercontent.com/zdenekdev/amazon-project/main/assets/amazon-hub-title.png'/></div>
 <h2>About the project</h2>
 
-<p><b>The Amazon project</b> is a basic web application that allows users to sign in using their Google account and add or remove items from the shopping cart.
+<p><b>The Amazon project</b> is a basic web application that allows users to sign in using their Google account and add or remove items from the shopping cart. I have used Firebase as the cloud-based database.
 </p>
 
 👉 Live Demo: <a href='https://amzn-project.vercel.app/'>Amazon project</a>
@@ -10,10 +10,10 @@
 <h3>Build with:</h3>
 
 » Next.js <br>
-» Redux toolkit<br>
-» Tailwind CSS<br>
-» NextAuth.js<br>
-» <br>
+» TypeScript <br>
+» Redux toolkit <br>
+» Tailwind CSS <br>
+» NextAuth.js <br>
 
 <h2>Screenshots of the project</h2>
 
