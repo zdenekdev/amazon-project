@@ -14,22 +14,22 @@ function Checkout() {
   const total = useSelector(selectTotal);
   const { data } = useSession();
 
-  const createCheckoutSession = async () => {
-    const stripe = await stripePromise;
+  // const createCheckoutSession = async () => {
+  //   const stripe = await stripePromise;
 
-    // Call the backend to create a checkout session
-    const checkoutSession = await axios.post("/api/create-checkout-session", {
-      items,
-      email: data?.user?.email!,
-    });
+  //   // Call the backend to create a checkout session
+  //   const checkoutSession = await axios.post("/api/create-checkout-session", {
+  //     items,
+  //     email: data?.user?.email!,
+  //   });
 
-    // Redirect user/customer to Stripe Checkout
-    const result = await stripe?.redirectToCheckout({
-      sessionId: checkoutSession.data.id,
-    });
+  //   // Redirect user/customer to Stripe Checkout
+  //   const result = await stripe?.redirectToCheckout({
+  //     sessionId: checkoutSession.data.id,
+  //   });
 
-    if (result?.error) alert(result?.error.message);
-  };
+  //   if (result?.error) alert(result?.error.message);
+  // };
 
   const currency = (price: number) => {
     return new Intl.NumberFormat("en-US", {
