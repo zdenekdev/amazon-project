@@ -13,7 +13,7 @@ import {
   selectItems,
 } from "../../slices/basketSlice";
 import { useEffect } from "react";
-import { CheckoutProducts, Products } from "../../types";
+import { CheckoutProducts } from "../../types";
 
 function Header() {
   const { data } = useSession();
