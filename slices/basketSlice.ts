@@ -19,6 +19,9 @@ export const basketSlice = createSlice({
     addToBasket: (state, action: PayloadAction<CheckoutProducts>) => {
       state.items = [...state.items, action.payload];
     },
+    removeAllFromBasket: (state) => {
+      state.items = [];
+    },
 
     removeFromBasket: (state, action: PayloadAction<{ id: number }>) => {
       const index = state.items.findIndex(
@@ -40,7 +43,8 @@ export const basketSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const { addToBasket, removeFromBasket, removeAllFromBasket } =
+  basketSlice.actions;
 
 // Selectors
 export const selectItems = (state: RootState) => state.basket.items;

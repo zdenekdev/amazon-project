@@ -6,14 +6,33 @@ import {
 } from "@heroicons/react/outline";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
-import { selectItems } from "../../slices/basketSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToBasket,
+  removeAllFromBasket,
+  selectItems,
+} from "../../slices/basketSlice";
+import { useEffect } from "react";
+import { CheckoutProducts, Products } from "../../types";
 
 function Header() {
   const { data } = useSession();
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const items = useSelector(selectItems);
+
+  useEffect(() => {
+    items.length > 0 && localStorage.setItem("basket", JSON.stringify(items));
+  }, [items]);
+
+  useEffect(() => {
+    if (localStorage.getItem("basket") != null) {
+      const basket = JSON.parse(localStorage.getItem("basket") as string);
+      dispatch(removeAllFromBasket());
+      basket.forEach((item: CheckoutProducts) => dispatch(addToBasket(item)));
+    }
+  }, [dispatch]);
 
   return (
     <header className="">
